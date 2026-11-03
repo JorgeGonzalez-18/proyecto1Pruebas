@@ -1,9 +1,17 @@
 package cr.ac.utn.proyecto.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -57,11 +65,10 @@ public class SearchResultsPage {
     }
 
     public ProductPage abrirProducto(String nombreProducto) {
-        WebElement producto = listaTitulosProductos.stream()
-                .filter(enlace -> enlace.getText().equalsIgnoreCase(nombreProducto))
-                .findFirst()
-                .orElseThrow(() -> new NoSuchElementException(
-                        "No se encontró el producto: " + nombreProducto));
+        WebDriverWait espera = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        WebElement producto = espera.until(
+                ExpectedConditions.elementToBeClickable(By.linkText(nombreProducto)));
 
         producto.click();
         return new ProductPage(driver);
