@@ -66,14 +66,25 @@ public class HomePage {
         return lnkAccount.getText();
     }
 
-    public void buscar(String texto) {
+    public SearchResultsPage buscar(String texto) {
         txtSearch.clear();
         txtSearch.sendKeys(texto);
         btnSearch.click();
+        return new SearchResultsPage(driver);
     }
 
     public boolean estaComoVisitante() {
         return !enlacesLogin.isEmpty() && enlacesLogout.isEmpty();
+    }
+
+    public CartPage irCarrito() {
+        lnkCart.click();
+        return new CartPage(driver);
+    }
+
+    public AccountPage irCuenta() {
+        lnkAccount.click();
+        return new AccountPage(driver);
     }
 
 }
