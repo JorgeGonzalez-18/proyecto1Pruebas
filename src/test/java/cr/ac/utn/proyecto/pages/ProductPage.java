@@ -37,8 +37,7 @@ public class ProductPage {
     @FindBy(css = "input[value='65'], select[id='product_attribute_16_5_4'] option[value='14']")
     private WebElement rdoProcessorFast;
     // RAM 8GB (+60.00)
-    @FindBy(css = "input[name*='product_attribute'][value*='8GB'], input[id*='product_attribute_'][value*='58']")
-    @FindBy(css = "input[value='91'], select[id='product_attribute_16_6_5'] option[value='17']")
+    @FindBy(css = "input[name*='product_attribute'][value*='8GB'], input[id*='product_attribute_'][value*='58'], input[value='91'], select[id='product_attribute_16_6_5'] option[value='17']")
     private WebElement rdoRam8GB;
     // HDD 400 GB (+100.00)
     @FindBy(css = "input[value='58'], input[value='19']")
