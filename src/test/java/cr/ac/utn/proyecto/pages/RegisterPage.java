@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class RegisterPage {
     private WebDriver driver;
 
-    //Localizadores
+    // Localizadores
     @FindBy(id = "gender-male")
     private WebElement rdoGenderMale;
 
@@ -33,7 +33,7 @@ public class RegisterPage {
     @FindBy(id = "register-button")
     private WebElement btnRegister;
 
-    //Errores de Validacion de campos
+    // Errores de Validacion de campos
     @FindBy(css = ".validation-summary-errors")
     private WebElement lblErrorGeneral;
 
@@ -52,13 +52,13 @@ public class RegisterPage {
     @FindBy(css = "span[data-valmsg-for='ConfirmPassword']")
     private WebElement lblErrorConfirmPassword;
 
-    //Constructor
+    // Constructor
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    //Metodos Logica
+    // Metodos Logica
     public void selecionarGeneroMasculino() {
         rdoGenderMale.click();
     }
@@ -102,8 +102,12 @@ public class RegisterPage {
         return this;
     }
 
+    public String obtenerErrorApellidos() {
+        return lblErrorLastName.getText();
+    }
+
     public RegisterResultPage registrarUsuarioValido(String nombre, String apellidos, String email,
-                                                     String password, String confirmPassword) {
+            String password, String confirmPassword) {
         selecionarGeneroMasculino();
         escribirNombre(nombre);
         escribirApellidos(apellidos);
@@ -134,6 +138,5 @@ public class RegisterPage {
     public String obtenerErrorConfirmacionPassword() {
         return lblErrorConfirmPassword.getText();
     }
-
 
 }

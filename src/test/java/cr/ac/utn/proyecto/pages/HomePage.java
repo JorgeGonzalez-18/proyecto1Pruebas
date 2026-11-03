@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import java.util.List;
 
 public class HomePage {
     protected WebDriver driver;
@@ -33,14 +34,20 @@ public class HomePage {
     @FindBy(css = "#topcartlink .cart-qty")
     private WebElement lblCartQty;
 
-    //Contructor
+    @FindBy(linkText = "Log in")
+    private List<WebElement> enlacesLogin;
+
+    @FindBy(linkText = "Log out")
+    private List<WebElement> enlacesLogout;
+
+    // Contructor
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    //Metodos Logica
-    public RegisterPage  irRegistro() {
+    // Metodos Logica
+    public RegisterPage irRegistro() {
         lnkRegister.click();
         return new RegisterPage(driver);
     }
@@ -65,5 +72,8 @@ public class HomePage {
         btnSearch.click();
     }
 
+    public boolean estaComoVisitante() {
+        return !enlacesLogin.isEmpty() && enlacesLogout.isEmpty();
+    }
 
 }
