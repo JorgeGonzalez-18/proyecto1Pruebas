@@ -89,4 +89,7 @@ public class CartPage {
     public String obtenerMensajeAdvertenciaTerminos() {
         return lblWarningTerms.getText();
     }
+        public String obtenerSubtotalItem() {
+        return lblSubtotalItem.getText();
+    }
 }

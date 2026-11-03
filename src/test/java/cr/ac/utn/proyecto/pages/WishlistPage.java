@@ -13,7 +13,7 @@ public class WishlistPage {
     @FindBy(css = ".wishlist-content")
     private WebElement lblWishlistVacia;
 
-    @FindBy(css = "tr.cart-item-row .product-name")
+    @FindBy(css = "tr.cart-item-row td.product a")
     private List<WebElement> listaNombresWishlist;
 
     @FindBy(name = "addtocart")

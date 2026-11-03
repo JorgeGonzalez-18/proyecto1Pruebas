@@ -33,14 +33,18 @@ public class ProductPage {
 
     //Opciones de armar un producto "Build your own computer" - RF-06
     //Procesador Rápido (Fast +100.00)
-    @FindBy(css = "input[name*='product_attribute'][value*='Fast'], input[id*='product_attribute_'][value*='57']")
+    @FindBy(css = "input[value='65'], select[id='product_attribute_16_5_4'] option[value='14']")
     private WebElement rdoProcessorFast;
     //RAM 8GB (+60.00)
     @FindBy(css = "input[name*='product_attribute'][value*='8GB'], input[id*='product_attribute_'][value*='58']")
+    @FindBy(css = "input[value='91'], select[id='product_attribute_16_6_5'] option[value='17']")
     private WebElement rdoRam8GB;
     //HDD 400 GB (+100.00)
-    @FindBy(css = "input[name*='product_attribute'][value*='400'], input[id*='product_attribute_'][value*='60']")
+    @FindBy(css = "input[value='58'], input[value='19']")
     private WebElement rdoHdd400GB;
+    //Indicador Del Carrito
+    @FindBy(css = "#topcartlink .cart-qty")
+    private WebElement lblCartQty;
 
     //Constructor
     public ProductPage(WebDriver driver) {
@@ -87,6 +91,9 @@ public class ProductPage {
         if (btnCerrarNotificacion.isDisplayed()) {
             btnCerrarNotificacion.click();
         }
+    }
+    public String obtenerCantidadIndicadorCarrito() {
+        return lblCartQty.getText();
     }
 
 
