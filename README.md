@@ -62,11 +62,8 @@ Cada prueba parte de un navegador nuevo mediante `BaseTest`. Las interacciones y
 
 
 ## Integrantes
-
-Completar con los nombres de las personas del grupo antes de entregar:
-
-- Integrante 1: Jorge Gonzalez
-- Integrante 2: Alejandro Gomez
-- Integrante 3:Alejandro Umana
-- Integrante 4: Douglas Ordonez
+-  Jorge Gonzalez
+-  Alejandro Gomez
+-  Alejandro Umana
+-  Douglas Ordonez
 
