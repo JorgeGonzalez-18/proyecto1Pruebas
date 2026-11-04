@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 import java.util.List;
 
 public class HomePage {
@@ -39,6 +41,15 @@ public class HomePage {
 
     @FindBy(linkText = "Log out")
     private List<WebElement> enlacesLogout;
+
+    @FindBy(id = "newsletter-email")
+    private WebElement txtNewsletterEmail;
+
+    @FindBy(id = "newsletter-subscribe-button")
+    private WebElement btnNewsletterSuscribir;
+
+    @FindBy(id = "newsletter-result-block")
+    private WebElement lblNewsletterResultado;
 
     // Contructor
     public HomePage(WebDriver driver) {
@@ -85,6 +96,21 @@ public class HomePage {
     public AccountPage irCuenta() {
         lnkAccount.click();
         return new AccountPage(driver);
+    }
+
+    // Suscribe un correo al boletin; el resultado llega por AJAX
+    public HomePage suscribirBoletin(String email) {
+        txtNewsletterEmail.clear();
+        txtNewsletterEmail.sendKeys(email);
+        btnNewsletterSuscribir.click();
+        return this;
+    }
+
+    // Espera a que el bloque de resultado tenga texto y lo devuelve
+    public String obtenerMensajeBoletin() {
+        WebDriverWait espera = new WebDriverWait(driver, Duration.ofSeconds(10));
+        espera.until(d -> !lblNewsletterResultado.getAttribute("textContent").trim().isEmpty());
+        return lblNewsletterResultado.getAttribute("textContent").trim();
     }
 
 }

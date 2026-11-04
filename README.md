@@ -57,6 +57,7 @@ Cada prueba parte de un navegador nuevo mediante `BaseTest`. Las interacciones y
 | `RegistroLoginTest` | CP-001–CP-008: registro, inicio de sesión y cierre de sesión |
 | `CarritoWishListTest` | CP-018, CP-020–CP-023: carrito, producto configurable y wishlist |
 | `CompraHistorialTest` | CP-026 y CP-029: compra completa e historial de pedidos |
+| `BusquedaCatalogoTest` | CP-009–CP-012 y CP-016: búsqueda, orden por precio y boletín |
 
 
 
