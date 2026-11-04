@@ -70,4 +70,3 @@ Completar con los nombres de las personas del grupo antes de entregar:
 - Integrante 3:Alejandro Umana
 - Integrante 4: Douglas Ordonez
 
-## Resultados de Maven
