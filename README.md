@@ -2,12 +2,18 @@
 
 Proyecto académico de automatización de pruebas para [Demo Web Shop](https://demowebshop.tricentis.com/), usando Java, Selenium WebDriver, JUnit 5 y el patrón Page Object Model (POM) con Page Factory.
 
+## Integrantes
+-  Jorge Gonzalez
+-  Alejandro Gomez
+-  Alejandro Umana
+-  Douglas Ordonez
+
+
 ## Requisitos
 
 - Java JDK 17 o superior.
 - Apache Maven.
 - Google Chrome instalado.
-- Conexión a Internet para abrir el sitio bajo prueba.
 
 Selenium Manager administra el controlador de Chrome al ejecutar las pruebas.
 
@@ -61,9 +67,4 @@ Cada prueba parte de un navegador nuevo mediante `BaseTest`. Las interacciones y
 
 
 
-## Integrantes
--  Jorge Gonzalez
--  Alejandro Gomez
--  Alejandro Umana
--  Douglas Ordonez
 
